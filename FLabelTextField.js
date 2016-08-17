@@ -1,8 +1,7 @@
 //@flow
 
 import React, {Component, PropTypes} from 'react';
-import {StyleSheet, View, TextInput, Animated, AnimatedValue} from 'react-native';
-const Platform = require('Platform');
+import {Platform, StyleSheet, View, TextInput, Animated, AnimatedValue} from 'react-native';
 
 class FloatingLabel extends Component {
 
@@ -97,7 +96,7 @@ export default class FLabelTextField extends Component {
         const visible: boolean = this.state.focused || !!this.props.value
 
         return (
-            <View>
+            <View style={{flexDirection: 'column'}}>
                 <FloatingLabel
                     visible={visible}
                     focused={this.state.focused}
