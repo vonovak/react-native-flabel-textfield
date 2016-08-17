@@ -31,4 +31,6 @@ import FloatLabelTextField from 'rn-flabel-textfield'
 />
 ```
 
+License: MIT
+
 ** small flicker when using `Animated`, which isn't there with `LayoutAnimation` which in turn causes blurry placeholder issues on iOS.
