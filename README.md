@@ -1,6 +1,6 @@
 # React Native Floating Label TextField
 
-A simple wrapper around 'TextField'. Works both for iOS and Android.
+A simple wrapper around 'TextInput'. Works both for iOS and Android.
 Note the wrapped TextField has no placeholder - the placeholder is 'simulated' by the floating label being down where the placeholder would normally be. I might later add a version which actually uses placeholder but for now, trying to use the placeholder causes issues with appearance.** 
 
 ### install 
