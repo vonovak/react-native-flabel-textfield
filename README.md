@@ -33,6 +33,8 @@ import FloatLabelTextField from 'rn-flabel-textfield'
 
 ![Example](https://raw.githubusercontent.com/vonovak/react-native-flabel-textfield/master/fl.gif "Example")
 
+[Checkbox](https://github.com/vonovak/react-native-round-checkbox), TextInput and Floating label textinput
+
 License: MIT
 
 ** small flicker when using `Animated`, which isn't there with `LayoutAnimation` which in turn causes blurry placeholder issues on iOS.
