@@ -3,6 +3,9 @@
 A simple wrapper around `TextField`. Tested on Android.
 Note the wrapped TextField has no placeholder - the placeholder is 'simulated' by the floating label being down where the placeholder ould normally be. I might later add a version which actually uses placeholder but for now, trying to use the placeholder causes issues with appearance.** 
 
+### install 
+`npm i --save rn-flabel-textfield`
+
 ### Props:
 Accepts all `TextField` props plus the following:
 
@@ -18,6 +21,8 @@ Accepts all `TextField` props plus the following:
 
 example usage:
 ```
+import FloatLabelTextField from 'rn-flabel-textfield'
+...
 <FloatLabelTextField
     placeholder={'Project Name'}
     onChangeText={newProject.setProjectName}
