@@ -12,7 +12,7 @@ class FloatingLabel extends Component {
 
     constructor(props) {
         super(props);
-        let initialPadding = this.props.visible ? 0 : props.flabelPadding
+        let initialPadding = this.props.visible ? this.props.flabelActivePadding : props.flabelPadding
         let initialFontSize = this.props.visible ? props.activeFontSize : props.inactiveFontSize
 
         this.state = {
@@ -28,7 +28,7 @@ class FloatingLabel extends Component {
 
         Animated.parallel([
             Animated.timing(this.state.paddingAnim, {
-                toValue: newProps.visible ? 0 : this.props.flabelPadding,
+                toValue: newProps.visible ? this.props.flabelActivePadding : this.props.flabelPadding,
                 duration: this.props.duration,
             }),
             Animated.timing(this.state.fontSizeAnim, {
@@ -44,7 +44,7 @@ class FloatingLabel extends Component {
 
     render() {
         const labelColor = this.state.paddingAnim.interpolate({
-            inputRange: [0, this.props.flabelPadding],
+            inputRange: [this.props.flabelActivePadding, this.props.flabelPadding],
             outputRange: [this.props.activeColor, this.props.inactiveColor],
         });
 
@@ -74,6 +74,8 @@ export default class FLabelTextField extends Component {
         activeFontSize: PropTypes.number,
         activeColor: PropTypes.string,
         flabelPadding: PropTypes.number,
+        flabelActivePadding: PropTypes.number,
+        wrapperStyle: PropTypes.object,
     }
 
     static defaultProps = {
@@ -83,6 +85,8 @@ export default class FLabelTextField extends Component {
         inactiveFontSize: 15,
         activeFontSize: 12,
         flabelPadding: 20,
+        flabelActivePadding: 0,
+        wrapperStyle: {},
     }
 
     constructor(props: any) {
@@ -96,7 +100,7 @@ export default class FLabelTextField extends Component {
         const visible: boolean = this.state.focused || !!this.props.value
 
         return (
-            <View style={{flexDirection: 'column'}}>
+            <View style={[this.props.wrapperStyle, {flexDirection: 'column'}]}>
                 <FloatingLabel
                     visible={visible}
                     focused={this.state.focused}

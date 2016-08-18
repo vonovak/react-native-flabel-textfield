@@ -1,3 +1,4 @@
+
 # React Native Floating Label TextField
 
 A simple wrapper around 'TextInput'. Works both for iOS and Android.
@@ -12,11 +13,13 @@ Accepts all `TextField` props plus the following:
 | Property | Type | Default | Description |
 |-----------|--------|---------|--------------------------------------------|
 | duration | `number` | 250 | Animation duration |
-| inactiveColor | `string` | 'dimgrey' | Color of floating label when the textfield has no focus or when the floating label is down |
+| inactiveColor | `string` | 'dimgrey' | Color of floating label when the `TextInput` has no focus or when the floating label is down |
 | placeholderFontSize | `number` | 15 | Font size of placeholder |
 | flabelFontSize | `number` | 12 | Font size of floating label |
 | activeColor | `string` | '#414Db1' | Color of focused floating label |
 | flabelPadding | `number` | 20 | Top padding of the floating label when it is down |
+| flabelActivePadding | `number` | 0 | Top padding of the floating label when it is up |
+| wrapperStyle | `object` | {} | Style for the `View` that wraps the floating label and the `TextInput` |
 
 
 example usage:
@@ -28,6 +31,7 @@ import FloatLabelTextField from 'rn-flabel-textfield'
     onChangeText={newProject.setProjectName}
     value={newProject.name}
     style={{height: 60}}
+    wrapperStyle={{marginTop: 15}}
 />
 ```
 
